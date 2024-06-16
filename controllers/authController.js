@@ -75,6 +75,7 @@ exports.removeUser = async (req, res, next) => {
 
 
 exports.updateUser = async (req, res) => {
+  console.log('Updating user profile');
   const { firstName, lastName, email } = req.body;
   
 
