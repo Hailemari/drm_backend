@@ -74,7 +74,7 @@ exports.removeUser = async (req, res, next) => {
 };
 
 
-exports.updateUser = async (req, res) => {
+exports.updateUser = async (req, res, next) => {
   console.log('Updating user profile');
   const { firstName, lastName, email } = req.body;
   
@@ -103,7 +103,6 @@ exports.updateUser = async (req, res) => {
 
     res.json({ message: 'Profile updated successfully', user });
   } catch (error) {
-    console.error('Error updating profile:', error);
-    res.status(500).json({ message: 'Server error' });
+    next(error)
   }
 };
