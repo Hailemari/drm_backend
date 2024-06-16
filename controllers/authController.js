@@ -76,6 +76,7 @@ exports.removeUser = async (req, res, next) => {
 
 exports.updateUser = async (req, res) => {
   const { firstName, lastName, email } = req.body;
+  
 
   try {
     const user = await User.findOne({ email });
