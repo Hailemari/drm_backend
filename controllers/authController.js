@@ -319,7 +319,7 @@ exports.forgotPassword = async (req, res, next) => {
     const resetToken = user.getResetPasswordToken();
     await user.save();
 
-    const resetUrl = `https://contentBDRM.netlify.app/passwordreset/${resetToken}`;
+    const resetUrl = `https://contentbdrm.netlify.app/passwordreset/${resetToken}`;
     const message = resetPasswordTemplate(resetUrl);
 
     try {
